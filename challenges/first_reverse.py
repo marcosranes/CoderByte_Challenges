@@ -18,9 +18,9 @@ Output: edoC evoL I
 """
 
 
-def first_reverse(param):
+def first_reverse(string: str) -> str:
     # code goes here
-    return param[::-1]
+    return string[::-1]
 
 
 # keep this function call here
