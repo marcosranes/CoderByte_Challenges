@@ -54,7 +54,7 @@ def codeland_username_validation(username: str) -> bool:
     # code goes here
     if 4 <= len(username) <= 25 \
             and username[0].isalpha() \
-            and username.isalnum() or "_" in username \
+            and (username.isalnum() or "_" in username) \
             and not username.endswith("_"):
         return bool(username)
     return not bool(username)
@@ -64,3 +64,7 @@ def codeland_username_validation(username: str) -> bool:
 if __name__ == '__main__':
     print(codeland_username_validation("aa_"))
     print(codeland_username_validation("u__hello_world123"))
+
+    print(codeland_username_validation("__bbbbbbb"))                           # false
+    print(codeland_username_validation("oooooooooooooooooo________a"))         # false
+    print(codeland_username_validation("a______b_________555555555555aaaa"))   # false
