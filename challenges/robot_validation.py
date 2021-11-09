@@ -19,7 +19,7 @@ def username_validation() -> bool:
                     robot = input("Type: ")
                     if robot == "I'm not a robot":
                         print("""
-         "  You've passed!  "
+         "            You've passed!          "
                         """)
                         trigger1 = 0
                     else:
