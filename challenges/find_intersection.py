@@ -3,6 +3,9 @@
     >>> arr = ["1, 3, 4, 7, 13", "1, 2, 4, 13, 15"]
     >>> find_intersection(arr)
     '1,4,13'
+    >>> arr = ["1, 3, 4, 7, 13", "2, 5, 6, 14, 15"]
+    >>> find_intersection(arr)
+    False
 """
 
 """
@@ -30,12 +33,15 @@ def find_intersection(str_arr: []) -> str:
     inter_list = sorted(int(x) for x in inter_set)         # [1, 4, 13]
     str_list = list(str(s) for s in inter_list)            # ['1', '4', '13']
     str_list_join = ",".join(str_list)                     # 1,4,13
-    return str_list_join
+
+    return str_list_join if str_list_join else bool(str_list_join)
 
 
 if __name__ == '__main__':
     # keep this function call here
     input1 = ["1, 3, 4, 7, 13", "1, 2, 4, 13, 15"]
     input2 = ["1, 3, 9, 10, 17, 18", "1, 4, 9, 10"]
+    input3 = ["1, 3, 4, 7, 13", "0, 2, 5, 14, 15"]
     print(find_intersection(input1))  # 1,4,13
     print(find_intersection(input2))  # 1,9,10
+    print(find_intersection(input3))  # False
